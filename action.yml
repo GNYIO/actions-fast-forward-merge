@@ -4,6 +4,9 @@ branding:
   icon: 'git-merge'
   color: 'red'
 inputs:
+  from_branch:
+    description: from branch
+    required: true
   to_branch:
     description: target branch
     required: true
@@ -11,5 +14,5 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ $GITHUB_REF }}
+    - ${{ inputs.from_branch }}
     - ${{ inputs.to_branch }}
