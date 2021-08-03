@@ -8,7 +8,7 @@ git checkout $1
 
 
 echo "checking if '$1' can be merged into '$2'"
-git merge-base --is-ancestor $2 $1
+git merge-base --is-ancestor $1 $2
 
 if [[ $? -eq 0 ]]; then
   echo "merging (ff) '$1' -> '$2'"
