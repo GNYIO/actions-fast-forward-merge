@@ -1,6 +1,7 @@
 FROM alpine:3.10
 
-COPY entrypoint.sh /entrypoint.sh
+RUN apk update && apk add bash
+
 COPY fast-forward-merge.sh /fast-forward-merge.sh
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["bash", "fast-forward-merge.sh"]
