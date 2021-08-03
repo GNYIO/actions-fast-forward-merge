@@ -1,6 +1,7 @@
 FROM alpine:3.10
 
-RUN apk update && apk add bash
+RUN apk update
+RUN apk add --no-cache --yes bash git
 
 COPY fast-forward-merge.sh /fast-forward-merge.sh
 
