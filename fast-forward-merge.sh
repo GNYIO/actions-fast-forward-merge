@@ -6,6 +6,8 @@ echo "second argument: $2"
 echo "checking out $1"
 git checkout $1
 
+echo "printing all local branches..."
+git branch --list
 
 echo "checking if '$1' can be merged into '$2'"
 git merge-base --is-ancestor $1 $2
