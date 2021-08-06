@@ -9,11 +9,11 @@ git remote -v
 echo ""
 
 echo "checking out '$1'"
-git checkout "$1 origin/$1"
+git checkout -b "$1 origin/$1"
 echo ""
 
 echo "checking out '$2'"
-git checkout "$2 origin/$2"
+git checkout -b "$2 origin/$2"
 echo ""
 
 echo "printing all local branches..."
