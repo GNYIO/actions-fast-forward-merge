@@ -3,6 +3,11 @@
 echo "first argument: $1"
 echo "second argument: $2"
 
+
+echo "print remotes"
+git remote -v
+echo ""
+
 echo "checking out '$1'"
 git checkout $1
 echo ""
