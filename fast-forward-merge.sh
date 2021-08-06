@@ -3,8 +3,8 @@
 echo "first argument: $1"
 echo "second argument: $2"
 
-echo "fetching all branches"
-git fetch --all
+echo "checking out '$1'"
+git checkout $1
 echo ""
 
 echo "checking out '$2'"
