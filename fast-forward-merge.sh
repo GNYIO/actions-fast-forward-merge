@@ -4,20 +4,12 @@ echo "first argument: $1"
 echo "second argument: $2"
 
 
-echo "print remotes"
-git remote -v
-echo ""
-
 echo "show git version"
 git --version
 echo ""
 
-echo "checking out '$1'"
-git checkout -b "$1 origin/$1"
-echo ""
-
 echo "checking out '$2'"
-git checkout -b "$2 origin/$2"
+git checkout "$2"
 echo ""
 
 echo "printing all local branches..."
