@@ -8,12 +8,18 @@ if [[ $DOES_FIRST_BRANCH_EXIST -ne 1 ]]; then
   echo "branch '$1' doesn't seem to exist on remote"
   exit 1
 fi
+echo "remote branch '$1' exists"
+echo ""
+
 
 echo "(2nd) checking if remote branch '$2' exists"
-
-
-
-echo "second argument: $2"
+DOES_SECOND_BRANCH_EXIST=$(git ls-remote --heads --quiet | tr '\t' ' ' | cut -d ' ' -f 2 | tr '/' ' ' | cut -d ' ' -f 3 | grep -w $2 | wc -l)
+if [[ $DOES_SECOND_BRANCH_EXIST -ne 1 ]]; then
+  echo "branch '$2' doesn't seem to exist on remote"
+  exit 1
+fi
+echo "remote branch '$2' exists"
+echo ""
 
 
 echo "show git version"
