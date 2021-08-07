@@ -8,6 +8,10 @@ echo "print remotes"
 git remote -v
 echo ""
 
+echo "show git version"
+git --version
+echo ""
+
 echo "checking out '$1'"
 git checkout -b "$1 origin/$1"
 echo ""
@@ -17,7 +21,7 @@ git checkout -b "$2 origin/$2"
 echo ""
 
 echo "printing all local branches..."
-git branch --list
+git branch -vv
 echo ""
 
 echo "checking if '$1' can be merged into '$2'"
