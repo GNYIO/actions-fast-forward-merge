@@ -22,6 +22,7 @@ git merge-base --is-ancestor $2 $1
 if [[ $? -eq 0 ]]; then
   echo "merging (ff) '$1' -> '$2'"
   git merge $1
+  git push origin $2
 else
   echo "no ff (fast forward) merge is possible"
   exit 1
