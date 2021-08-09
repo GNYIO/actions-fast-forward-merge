@@ -1,8 +1,7 @@
 #!/bin/bash
 
-
 echo "(1st) checking if remote branch '$1' exists"
-DOES_FIRST_BRANCH_EXIST=$(git ls-remote --heads --quiet | tr '\t' ' ' | cut -d ' ' -f 2 | tr '/' ' ' | cut -d ' ' -f 3 | grep -w $1 | wc -l)
+DOES_FIRST_BRANCH_EXIST=$(git ls-remote --heads --quiet | tr '\t' ' ' | cut -d ' ' -f 2 | tr '/' ' ' | cut -d ' ' -f 3 | grep "^$1$" | wc -l)
 
 if [[ $DOES_FIRST_BRANCH_EXIST -ne 1 ]]; then
   echo "branch '$1' doesn't seem to exist on remote"
@@ -13,7 +12,7 @@ echo ""
 
 
 echo "(2nd) checking if remote branch '$2' exists"
-DOES_SECOND_BRANCH_EXIST=$(git ls-remote --heads --quiet | tr '\t' ' ' | cut -d ' ' -f 2 | tr '/' ' ' | cut -d ' ' -f 3 | grep -w $2 | wc -l)
+DOES_SECOND_BRANCH_EXIST=$(git ls-remote --heads --quiet | tr '\t' ' ' | cut -d ' ' -f 2 | tr '/' ' ' | cut -d ' ' -f 3 | grep "^$2$" | wc -l)
 if [[ $DOES_SECOND_BRANCH_EXIST -ne 1 ]]; then
   echo "branch '$2' doesn't seem to exist on remote"
   exit 1
